@@ -112,3 +112,106 @@ const espacio = " ";
 // si es menor 18 - "sos un ninio"
 // si es mayor a 25 - "sos un joven"
 // si es mayor a 40 - "sos un viejito"
+
+//operador ternario
+//  condicion ? si es true : si es false
+
+// edad > 18 ? alert("sos mayor de edad") : alert("sos menor de edad");
+
+//ciclos e iteraciones - loops - for, while, switch
+
+//for - ciclo por conteo - 
+//while, do.. while... // ciclos condicionales
+//switch
+// for (empieza; cuantas veces; como cambia) {}
+// for(let i = 0; i < 10; i++) { codigo}
+
+//i++ = i + 1
+let palabra = "hola";
+
+//metodo length - largo
+
+// console.log(palabra.length);
+
+// let numero = parseInt(prompt("decime un numero"));
+//un numero par se divide por dos sin resto
+//10 /2 = 5    10 es par
+// 15/2 = 7.5   15 impar    15/2 = 7 y resta 1
+// operador modulo % - el resto 
+// 10%2 = 0 - par
+//15%2 = 1 - impar
+
+//continue - saltea una iteracion
+//break - cancela todo el ciclo
+    // for(let i = 1; i <= numero; i++) {
+    //     if (i == 5) {
+    //         continue;
+    //     }
+    //     console.log(i);
+    //     if ( i == 10) {
+    //         break;
+    //     } else {
+    //         if (i%2 == 0) {
+    //             console.log("el nuemro es " + i + " es par")
+    //         } else {
+    //             console.log("el nuemro es " + i + " es impar")
+    //         }
+    //     }
+
+    // }
+
+
+//while  -   do.. while
+// se puede ejecutar 0 veces o mas
+// let dato = prompt("escribi una palabra. Salir para terminar");
+// while(dato != "salir") {
+//     console.log(`el dato es ${dato}`)
+//     dato = prompt("escribi una palabra. Salir para terminar");
+// }
+
+
+//ejecuta por lo menos una vez
+// do {
+//     console.log(`el dato es ${dato}`)
+//     dato = prompt("escribi una palabra. Salir para terminar");
+//     //codigo
+// } while (dato != "salir")
+
+
+let pass = 1234;
+
+// let dato = parseInt(prompt("cual es la contrasena"));
+// let intentos = 3;
+
+// while ((dato != pass) && (intentos > 0)) {
+//     intentos--; 
+//     alert(`contrasena equivocada, te quedan ${intentos} intentos`);
+//     if (intentos == 0) {
+//         break;
+//     } else {
+//         dato = parseInt(prompt("cual es la contrasena"));
+       
+//     }
+// }
+
+let casado = false;
+
+do {
+    alert("te proponen matrimonio, aceptas?");
+    let propuesta = prompt("aceptas?");
+    if(propuesta == "si") {
+        casado = true
+    }
+} while (!casado)
+
+
+//TAREA
+//1 -  pedirle al usuario un numero
+// hacer un ciclo que en cada iteracion sume el indice de manera que al final me de 
+// la suma total de todos los numero
+/*
+ por ejemplo, si el usuario pone 3 al final de todo me va a dar 6 ( 1+2+3 ) 
+*/ 
+
+//2. Pedirle al usuario que ingrese su nota de matematicas. 
+// el ciclo seguira pidiendo notas hasta que el usuario apruebe con mas de 6.
