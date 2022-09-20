@@ -6,11 +6,11 @@ lineas
 
 //variables
 //declarar
-var edad;
+// var edad;
 
-//inicializar
-// var nombre = "Vanesa";
-edad = 25;
+// //inicializar
+// // var nombre = "Vanesa";
+// edad = 25;
 
 //tipos de datos
 //texto - string - ""   ''
@@ -20,17 +20,17 @@ edad = 25;
 //forma nueva
 //let, const
 
-let apellido = "Perez";
+// let apellido = "Perez";
 
-apellido = "Roufe";
+// apellido = "Roufe";
 
-const dni = "35624521";
+// const dni = "35624521";
 
-let numero1 = 3;
-let numero2 = 4;
+// let numero1 = 3;
+// let numero2 = 4;
 
-let suma = numero1 * numero2; //7
-const espacio = " ";
+// // let suma = numero1 * numero2; //7
+// const espacio = " ";
 
 // let nombreCompleto = nombre + espacio + apellido //Vanesa Roufe
 
@@ -127,7 +127,7 @@ const espacio = " ";
 // for(let i = 0; i < 10; i++) { codigo}
 
 //i++ = i + 1
-let palabra = "hola";
+// let palabra = "hola";
 
 //metodo length - largo
 
@@ -178,7 +178,7 @@ let palabra = "hola";
 // } while (dato != "salir")
 
 
-let pass = 1234;
+// let pass = 1234;
 
 // let dato = parseInt(prompt("cual es la contrasena"));
 // let intentos = 3;
@@ -194,15 +194,15 @@ let pass = 1234;
 //     }
 // }
 
-let casado = false;
+// let casado = false;
 
-do {
-    alert("te proponen matrimonio, aceptas?");
-    let propuesta = prompt("aceptas?");
-    if(propuesta == "si") {
-        casado = true
-    }
-} while (!casado)
+// do {
+//     alert("te proponen matrimonio, aceptas?");
+//     let propuesta = prompt("aceptas?");
+//     if(propuesta == "si") {
+//         casado = true
+//     }
+// } while (!casado)
 
 
 //TAREA
@@ -215,3 +215,207 @@ do {
 
 //2. Pedirle al usuario que ingrese su nota de matematicas. 
 // el ciclo seguira pidiendo notas hasta que el usuario apruebe con mas de 6.
+
+
+//switch
+
+/* 
+switch (variable) {
+    case [valor]:
+        codigo
+        break;
+    case
+    case
+    case
+    case
+    default:
+        codigo
+        break
+}
+
+
+*/
+// let animal = prompt("decime un animal");
+
+// switch(animal) {
+//     case 'gato':
+//         console.log("el gato hace miau");
+//         break;
+//     case 'perro':
+//         console.log("el perro hace guau");
+//         break;
+//     case 'vaca':
+//         console.log("la vaca hace mu");
+//         break;
+//     default:
+//         console.log("No se como hace ese animal");
+//         break;
+//     }
+
+// let num1 = parseInt(prompt("Cual es el primer numero?"));
+// let num2 = parseInt(prompt("Cual es el segundo numero?"));
+// let operacion = prompt("Que operacion queres?");
+// let resultado;
+
+// switch(operacion){
+//     case "+":
+//         resultado =num1 + num2
+//        console.log(resultado);
+//        break;
+//     case "-":
+//         console.log(num1 - num2);
+//         break;
+//     case "*":
+//         console.log(num1 * num2);
+//         break;
+//     case "/":
+//         if(num2 == 0) {
+//             console.log("no se puede dividir un numero por cero")
+//         } else {
+//             console.log(num1 / num2);
+//         }
+//         break;
+//     default:
+//         console.log("La operacion no es correcta");
+//         break;
+// }
+
+
+// funciones - solucionen un solo problema
+
+// function nombreUtil(parametros){ codigo }
+
+function pedirNombre() {
+    let nombre = prompt("cual es tu nombre");
+    console.log(`el nombre elegido es ${nombre}`)
+}
+// pedirNombre();
+let final;
+function aproboNota() {
+    let nota = parseInt(prompt("cual es la nota?"));
+    if(nota >= 4) {
+        final = "aprobado";
+        console.log("aprobaste")
+    } else {
+        final = "desaprobado";
+        console.log("desaprobaste")
+    }
+    return final;
+}
+function aproboNotaSinReturn() {
+    let nota = parseInt(prompt("cual es la nota?"));
+    let final;
+    if(nota >= 4) {
+        final = "aprobado";
+        console.log("aprobaste")
+    } else {
+        final = "desaprobado";
+        console.log("desaprobaste")
+    }
+}
+
+// let notaFinal1 = aproboNota();
+// let notaFinal2 = aproboNotaSinReturn();
+
+// console.log(notaFinal1);
+// console.log(notaFinal2);
+
+// if (notaFinal1 == 'aprobado') {
+//     console.log("genio");
+// }
+
+// if (notaFinal2 == 'aprobado') {
+//     console.log("genio");
+// }
+
+
+
+// aproboNota();
+// let numero1 = parseInt(prompt("cual es el primer numero?"));
+
+function suma(num1, num2) {
+    let resultado = num1 + num2;
+    return resultado;
+}
+// suma(15, numero1);
+// suma(8,6);
+// suma(18,6);
+
+
+function calcularDescuento(precio, porcentaje) {
+    let descuento = (precio * porcentaje) /100;
+    let precioFinal = precio - descuento;
+    return precioFinal;
+}
+
+console.log(calcularDescuento(1000,20));
+
+function agregarProducto() {
+    let nombreProducto = prompt("cual es el nombre del producto?");
+    let precioProducto = parseFloat(prompt("cual es el precio?"));
+    let final;
+    if (precioProducto > 1000) {
+        final = calcularDescuento(precioProducto, 15);
+    } else {
+        final = calcularDescuento(precioProducto, 5);
+    }
+    let producto = `el producto nuevo es ${nombreProducto} y su precio final es ${final}`;
+    return producto
+}
+
+// console.log(agregarProducto());
+
+// funciones anonimas
+
+const resta = function(num1, num2){
+    let resultado = num1 - num2;
+    //console.log(resultado)
+    return resultado;
+}
+console.log(resta(8,2))
+
+console.log(resta(5,1))
+
+//funcion flecha
+
+const multiplicacion = (num1, num2) => {
+    let resultado = num1 * num2;
+    return resultado;
+}
+
+console.log(multiplicacion(6,2));
+
+const division = (num1, num2) => num1 / num2;
+
+console.log(division(10,2));
+
+function calculadora (numero1, numero2, operacion) {
+    let resultado;
+    switch(operacion){
+        case "+":
+            resultado = suma(numero1, numero2);
+            break;
+        case "-":
+            resultado = resta(numero1,numero2);
+            break;
+        case "*":
+            resultado = multiplicacion(numero1, numero2);
+            break;
+        case "/":
+            if(numero2 == 0) {
+                resultado = 0;
+            } else {
+                resultado = division(numero1, numero2);
+            }
+            break;
+        default:
+            resultado = console.log("no es una operacion valida");
+            break;
+    }
+    return resultado;
+}
+
+// TAREA - crear una funcion que le pida al usuario un numero 
+// y evalue si es un numero primo o no.
+// un numero primo, es un numero que solo se divide por si mismo y por uno.
+// el numero 1 no es primo.
