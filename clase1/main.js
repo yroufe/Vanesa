@@ -367,55 +367,153 @@ function agregarProducto() {
 
 // funciones anonimas
 
-const resta = function(num1, num2){
-    let resultado = num1 - num2;
-    //console.log(resultado)
-    return resultado;
-}
-console.log(resta(8,2))
+// const resta = function(num1, num2){
+//     let resultado = num1 - num2;
+//     //console.log(resultado)
+//     return resultado;
+// }
+// console.log(resta(8,2))
 
-console.log(resta(5,1))
+// console.log(resta(5,1))
 
 //funcion flecha
 
-const multiplicacion = (num1, num2) => {
-    let resultado = num1 * num2;
-    return resultado;
-}
+// const multiplicacion = (num1, num2) => {
+//     let resultado = num1 * num2;
+//     return resultado;
+// }
 
-console.log(multiplicacion(6,2));
+// console.log(multiplicacion(6,2));
 
-const division = (num1, num2) => num1 / num2;
+// const division = (num1, num2) => num1 / num2;
 
-console.log(division(10,2));
+// console.log(division(10,2));
 
-function calculadora (numero1, numero2, operacion) {
-    let resultado;
-    switch(operacion){
-        case "+":
-            resultado = suma(numero1, numero2);
-            break;
-        case "-":
-            resultado = resta(numero1,numero2);
-            break;
-        case "*":
-            resultado = multiplicacion(numero1, numero2);
-            break;
-        case "/":
-            if(numero2 == 0) {
-                resultado = 0;
-            } else {
-                resultado = division(numero1, numero2);
-            }
-            break;
-        default:
-            resultado = console.log("no es una operacion valida");
-            break;
+// function calculadora (numero1, numero2, operacion) {
+//     let resultado;
+//     switch(operacion){
+//         case "+":
+//             resultado = suma(numero1, numero2);
+//             break;
+//         case "-":
+//             resultado = resta(numero1,numero2);
+//             break;
+//         case "*":
+//             resultado = multiplicacion(numero1, numero2);
+//             break;
+//         case "/":
+//             if(numero2 == 0) {
+//                 resultado = 0;
+//             } else {
+//                 resultado = division(numero1, numero2);
+//             }
+//             break;
+//         default:
+//             resultado = console.log("no es una operacion valida");
+//             break;
+//     }
+//     return resultado;
+// }
+
+//objetos
+
+//objeto literal 
+
+// const mascota1 = {
+//     // propiedad: valor,
+//     nombre: "simba",
+//     tipo: 'gato',
+//     edad: 5,
+//     genero: 'macho',
+//     castrado: true,
+//     duenio: {
+//         nombreDuenio: 'yael',
+//         telefono: 1111111
+//     }
+// }
+
+// console.log(mascota1);
+// console.log(mascota1["nombre"]);
+// console.log(mascota1.tipo);
+// console.log(mascota1.duenio.telefono);
+
+// mascota1.castrado = false;
+// mascota1.duenio.telefono = 2222222;
+// console.log(mascota1);
+
+// //funcion constructora
+// class Mascota {
+//     constructor(nombreQueDaElUsuario, edad, castrado) {
+//         this.nombre = nombreQueDaElUsuario;
+//         this.edad = edad;
+//         this.castrado = castrado;
+//         this.puntos = 0;
+//     }
+//     agregarPuntos(numero) {
+//         this.puntos = this.puntos + numero;
+//         return this.puntos;
+//     };
+// }
+
+// const daisy = new Mascota("daisy",3,true);
+// const lucky = new Mascota("lucky", 2, false);
+// console.log(daisy);
+// console.log(lucky);
+
+// const agregarMascota = () => {
+//     let nombreMascota = prompt("como se llama la mascota?").trim().toUpperCase();
+//     let edadMascota = parseInt(prompt("que edad tiene?"));
+//     let estaCastrado = prompt("esta castrado? si o no");
+//     let castrado;
+//     if(estaCastrado == "si") {
+//         castrado = true;
+//     } else {
+//         castrado = false;
+//     }
+//     const mascotaNueva = new Mascota(nombreMascota, edadMascota,castrado);
+//     mascotaNueva.agregarPuntos(100);
+//     return mascotaNueva;
+// }
+
+// 1 - crear una clase constructora de productos que acepte nombre, categoria,
+// precio, stock
+// 2 - un metodo que calcule el iva al precio (21%)
+// 3 - un metodo que se llame comprar y que acepte la cantidad por parametro
+// el metodo va a revisar, si tengo stock suficiente. si tengo - entonces va a dar un alert que diga
+// 'felicitaciones, compraste x producto'
+// si no - da un alert 'no hay suficiente stock, solo quedan x'
+
+class Producto {
+    constructor(nombre, categoria, precio, stock){
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.precio = precio;
+        this.stock = stock;
     }
-    return resultado;
+    calcularIVA(){
+        this.precio = (this.precio * 21 / 100) + this.precio;
+        return this.precio;
+    }
+    comprar(cantidad){
+        if(this.stock >= cantidad){
+            alert(`Felicitaciones, compraste ${cantidad} por ${this.nombre}`);
+            this.stock = this.stock - cantidad;
+            return this.stock;
+        }else{
+            alert(`No hay suficiente stock, solo quedan ${this.stock} ${this.nombre}`)
+        }
+    }
 }
 
-// TAREA - crear una funcion que le pida al usuario un numero 
-// y evalue si es un numero primo o no.
-// un numero primo, es un numero que solo se divide por si mismo y por uno.
-// el numero 1 no es primo.
+const mesa = new Producto("mesa", "mueble", 1500, 10);
+mesa.calcularIVA();
+console.log(mesa);
+
+mesa.comprar(8);
+
+//crear una clase de estudiantes que tenga - nombre, edad, nota matematica, nota lengua
+//crear un metodo para cambiar la nota
+//metodo que calcule si el promedio aprueba o no (aprueba con 4)
+
+
+
