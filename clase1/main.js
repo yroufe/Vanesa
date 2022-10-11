@@ -342,26 +342,26 @@ function suma(num1, num2) {
 // suma(18,6);
 
 
-function calcularDescuento(precio, porcentaje) {
-    let descuento = (precio * porcentaje) /100;
-    let precioFinal = precio - descuento;
-    return precioFinal;
-}
+// function calcularDescuento(precio, porcentaje) {
+//     let descuento = (precio * porcentaje) /100;
+//     let precioFinal = precio - descuento;
+//     return precioFinal;
+// }
 
-console.log(calcularDescuento(1000,20));
+// console.log(calcularDescuento(1000,20));
 
-function agregarProducto() {
-    let nombreProducto = prompt("cual es el nombre del producto?");
-    let precioProducto = parseFloat(prompt("cual es el precio?"));
-    let final;
-    if (precioProducto > 1000) {
-        final = calcularDescuento(precioProducto, 15);
-    } else {
-        final = calcularDescuento(precioProducto, 5);
-    }
-    let producto = `el producto nuevo es ${nombreProducto} y su precio final es ${final}`;
-    return producto
-}
+// function agregarProducto() {
+//     let nombreProducto = prompt("cual es el nombre del producto?");
+//     let precioProducto = parseFloat(prompt("cual es el precio?"));
+//     let final;
+//     if (precioProducto > 1000) {
+//         final = calcularDescuento(precioProducto, 15);
+//     } else {
+//         final = calcularDescuento(precioProducto, 5);
+//     }
+//     let producto = `el producto nuevo es ${nombreProducto} y su precio final es ${final}`;
+//     return producto
+// }
 
 // console.log(agregarProducto());
 
@@ -483,33 +483,33 @@ function agregarProducto() {
 // 'felicitaciones, compraste x producto'
 // si no - da un alert 'no hay suficiente stock, solo quedan x'
 
-class Producto {
-    constructor(nombre, categoria, precio, stock){
-        this.nombre = nombre;
-        this.categoria = categoria;
-        this.precio = precio;
-        this.stock = stock;
-    }
-    calcularIVA(){
-        this.precio = (this.precio * 21 / 100) + this.precio;
-        return this.precio;
-    }
-    comprar(cantidad){
-        if(this.stock >= cantidad){
-            alert(`Felicitaciones, compraste ${cantidad} por ${this.nombre}`);
-            this.stock = this.stock - cantidad;
-            return this.stock;
-        }else{
-            alert(`No hay suficiente stock, solo quedan ${this.stock} ${this.nombre}`)
-        }
-    }
-}
+// class Producto {
+//     constructor(nombre, categoria, precio, stock){
+//         this.nombre = nombre;
+//         this.categoria = categoria;
+//         this.precio = precio;
+//         this.stock = stock;
+//     }
+//     calcularIVA(){
+//         this.precio = (this.precio * 21 / 100) + this.precio;
+//         return this.precio;
+//     }
+//     comprar(cantidad){
+//         if(this.stock >= cantidad){
+//             alert(`Felicitaciones, compraste ${cantidad} por ${this.nombre}`);
+//             this.stock = this.stock - cantidad;
+//             return this.stock;
+//         }else{
+//             alert(`No hay suficiente stock, solo quedan ${this.stock} ${this.nombre}`)
+//         }
+//     }
+// }
 
-const mesa = new Producto("mesa", "mueble", 1500, 10);
-mesa.calcularIVA();
-console.log(mesa);
+// const mesa = new Producto("mesa", "mueble", 1500, 10);
+// mesa.calcularIVA();
+// console.log(mesa);
 
-mesa.comprar(8);
+// mesa.comprar(8);
 
 //crear una clase de estudiantes que tenga - nombre, edad, nota matematica, nota lengua
 //crear un metodo para cambiar la nota
@@ -517,3 +517,268 @@ mesa.comprar(8);
 
 
 
+//ARRAYS
+//----------------0----------1----2---3---4----==============5=============********6*********
+// const lista = ["texto 1", "texto",6 , 9, true, {nombre: "Vanesa", edad: 30},["perro", "gato"], "elemento nuevo"];
+// //------------------------------------------------------------------------------0--------1
+
+// console.log(lista);
+// console.log(lista[3]);
+// console.log(lista[5].nombre);
+// console.log(lista[6][1]);
+
+// for(let i=0; i < lista.length; i++) {
+//     console.log(`el elemento en la posicion ${i} es ${lista[i]}`);
+// }
+
+
+// let listaSuper = ["manzana","leche","agua","pan","manteca"];
+// console.log(listaSuper)
+
+// //push - agrega al final
+// listaSuper.push("galletas");
+// console.log(listaSuper)
+
+// //unshift - agrega al principio
+// listaSuper.unshift("aceite");
+// console.log(listaSuper);
+
+// //pop - borra el ultimo
+// listaSuper.pop();
+// console.log(listaSuper);
+
+// //shift - borra el primero
+// listaSuper.shift();
+// console.log(listaSuper);
+
+// //splice - borra los elementos que le digamos
+
+// // array.splice(posicion inicial, cantidad a borrar)
+// listaSuper.splice(1,1);
+// console.log(listaSuper);
+
+// //join - convierte el array en un texto, separando cada elemento
+// let textoSuper = listaSuper.join(" / ");
+// console.log(textoSuper);
+
+// //concat - concatena dos arrays
+// let listaVerduleria = ["tomate", "lechuga", "cebolla", "morron"];
+
+// const listaFinal = listaSuper.concat(listaVerduleria);
+// console.log(listaFinal);
+
+// //indexOf - nos trae la posicion de cierto elemento
+
+// console.log(listaFinal.indexOf("tomate"));
+
+// if (!listaFinal.includes("frutilla")) {
+//     listaFinal.push("frutilla");
+// } else {
+//     console.log("la manzana ya esta")
+// }
+// console.log(listaFinal);
+
+// if(listaFinal.indexOf("lechuga") != -1) {
+//     let posicion = listaFinal.indexOf("lechuga")
+//     listaFinal.splice(posicion,1);
+// }
+// console.log(listaFinal);
+
+// // includes - booleano
+// console.log(listaFinal.includes("gaseosa"))
+
+
+// const eliminarElemento = (elemento) => {
+//     let index = listaFinal.indexOf(elemento);
+//     if (index != -1) {
+//         listaFinal.splice(index,1);
+//     }
+//     return listaFinal;
+// }
+
+// // let elementoAborrar = prompt("que queres borrar?");
+// // console.log(eliminarElemento(elementoAborrar));
+
+// let listaProductos = [
+//     {nombre: "televisor", categoria: "electro", precio: 1500}, 
+//     {nombre: "estufa", categoria: "electro", precio: 2500},
+//     {nombre: "ventilador", categoria: "electro", precio: 500}
+// ]
+
+// console.log(listaProductos)
+
+// //for... of
+
+// for(let pepito=0; pepito< listaProductos.length; pepito++) {
+//     console.log(listaProductos[pepito].nombre)
+// }
+
+// for(const producto of listaProductos) {
+//     console.log(`este producto es ${producto.nombre} y su precio es ${producto.precio}`)
+// }
+
+// class Producto{
+//     constructor(nombre, categoria, precio) {
+//         this.nombre = nombre;
+//         this.categoria = categoria;
+//         this.precio = precio;
+//     }
+// }
+
+// const agregarProducto = ()=> {
+//     let nombreProducto = prompt("que producto es?"); 
+//     let catProducto = prompt("que categoria es?"); 
+//     let precioProducto = parseFloat(prompt("que precio tiene?")); 
+
+//     let productoNuevo = new Producto(nombreProducto, catProducto,precioProducto);
+//     listaProductos.push(productoNuevo);
+
+//     return listaProductos;
+
+// }
+// agregarProducto();
+
+
+//abstraccion - de valores
+// let total = 0;
+
+// function sumaTotal() {
+//     for(i=0; i<7; i++) {
+//         total += i;
+//     }
+// }
+
+// sumaTotal()
+
+//abstraer acciones - 2 tipos
+// 1 - funciones que retornan funciones
+// 2 - funciones que aceptan como parametro otra funcion
+
+// function mayorQue(num) {
+//     return (num2) => num2 > num;
+// }
+
+// let mayorQueCinco = mayorQue(5); // function mayorQueCinco(num) { return num > 5}
+// let mayorQueDiez = mayorQue(10); //function mayorQueDiez(num) { return num > 10}
+// console.log(mayorQueCinco(7));
+
+// function calculadora(operacion) {
+//     switch (operacion) {
+//         case 'suma':
+//             return (num1, num2) => num1 + num2;
+//         case 'resta':
+//             return (num1, num2) => num1 - num2;
+//         default:
+//             alert("no es una operacion") ;
+//             break;   
+//     }
+// }
+
+// const suma = calculadora("suma");
+// const resta = calculadora("resta");
+
+
+// suma(3,5); //8
+
+
+// function nombreUtil (funcion, param) {
+//     //codigo
+// }
+
+function porCadaElem(array, funcion) {
+    for(const elemento of array) {
+        funcion(elemento);
+    }
+}
+
+let numeros = [5,200,45,2,15];
+
+// porCadaElem(numeros,console.log);
+
+let total = 0
+function acumular(num){
+    total += num;
+    console.log(total)
+}
+// porCadaElem(numeros, acumular);
+
+//callback
+
+// const listaDuplicados = [];
+// porCadaElem(numeros, (elemento)=>{
+//     let resultado = elemento*2;
+//     listaDuplicados.push(resultado)
+//     console.log(listaDuplicados);
+// })
+
+
+const listaProductos = [
+    {nombre: "lapiz", precio: 100},
+    {nombre: "goma", precio: 50},
+    {nombre: "cuaderno", precio: 200},
+    {nombre: "marcadores", precio: 500},
+    {nombre: "abrochadora", precio: 450}
+]
+console.log(listaProductos)
+//1 - foreach - por cada elemento
+listaProductos.forEach(producto => {
+    producto.precio = producto.precio * 1.21;
+    // console.log(`este producto es ${producto.nombre} y su precio es ${producto.precio}`)
+})
+console.log(listaProductos)
+
+// 2 - find - busca un elemento - solo trae el primero que encuentra
+// let productoABuscar = prompt("que queres buscar?");
+
+// const buscar = listaProductos.find(pepito => pepito.nombre == productoABuscar && pepito.contra == clave);
+
+// console.log(buscar)
+
+//3 - filter - me trae todos
+
+let buscaPrecio = listaProductos.filter(prod => prod.precio > 400);
+console.log(buscaPrecio);
+
+//4 - some - te dice si el producto existe o no - true o false
+
+let existe = listaProductos.some(elemento => elemento.nombre == 'calculadora')
+console.log(existe)
+
+//5 - map - crea un array con los cambios que yo quiero
+const listaNueva = listaProductos.map(prod=> {
+    return {nombre: prod.nombre,
+            precio: prod.precio* 1.21
+        }
+    })
+    console.log(listaProductos)
+    console.log(listaNueva)
+
+// reduce - resume el array a un solo valor
+const totalPrecio = listaProductos.reduce((acumulador, prod)=> {
+    return acumulador + prod.precio
+}, 0)
+
+console.log(totalPrecio)
+
+//sort - ordena
+
+const animales = ["vaca", "elefante", "perro","vaba", "leon", "camello"];
+
+console.log(animales.sort())
+
+console.log(numeros.sort())
+console.log(numeros.sort((a,b)=> b - a))
+
+listaProductos.sort((a,b)=> {
+    if (a.precio > b.precio) {
+        return 1
+    }
+    if (a.precio < b.precio) {
+        return -1
+    }
+    return 0
+})
+console.log(listaProductos)
+
+// clase Date - para manejar fechas
+// objeto Math
