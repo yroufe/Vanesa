@@ -762,23 +762,161 @@ console.log(totalPrecio)
 
 //sort - ordena
 
-const animales = ["vaca", "elefante", "perro","vaba", "leon", "camello"];
+// const animales = ["vaca", "elefante", "perro","vaba", "leon", "camello"];
 
-console.log(animales.sort())
+// console.log(animales.sort())
 
-console.log(numeros.sort())
-console.log(numeros.sort((a,b)=> b - a))
+// console.log(numeros.sort())
+// console.log(numeros.sort((a,b)=> b - a))
 
-listaProductos.sort((a,b)=> {
-    if (a.precio > b.precio) {
-        return 1
-    }
-    if (a.precio < b.precio) {
-        return -1
-    }
-    return 0
-})
-console.log(listaProductos)
+// listaProductos.sort((a,b)=> {
+//     if (a.precio > b.precio) {
+//         return 1
+//     }
+//     if (a.precio < b.precio) {
+//         return -1
+//     }
+//     return 0
+// })
+// console.log(listaProductos)
 
 // clase Date - para manejar fechas
 // objeto Math
+
+//sugar syntax
+// ++
+// let numero;
+// numero = numero + 1;
+// numero += 1;
+// numero++;
+// numero--;
+
+//operador ternario
+// let edad = 30;
+
+// (edad > 18) ? alert("sos mayor de edad") : alert("sos menor de edad");
+
+//codigo que valida el input
+//<input className={valido ? "valido" : "error"}/> 
+
+function Componente({nombre, stock}) {
+    let valido;
+    if (telefono.length > 8) {
+        valido = true
+    } else {
+        valido = false
+    }
+
+    return (
+        <div>
+            <input className={valido ? "valido" : "error"}/>
+            {carrito.length == 0 &&  "<p>el carrito esta vacio</p>"}
+        </div>
+    )
+}
+
+
+
+//operador logico OR ||
+// posibles valores:
+/*
+ valor real como texto o numero o array  - valor valido
+ true
+
+ valores FALSY
+ ==============
+ ""
+ 0
+ false
+ null
+ undefined
+ NaN - not a number
+
+*/
+// const valor = false;
+
+// const array = null;
+
+// const objeto = {
+//     nombre: "vanesa",
+//     edad: 30
+// }
+
+// console.log(objeto.profesion || "no figura la profesion")
+
+const mascotas = [
+    {nombre: "daisy", edad: 3, castrado: true},
+    {nombre: "simba", edad: 5},
+    {nombre: "darwin", edad: 6, castrado: true},
+    {nombre: "lucky", edad: 1, },
+    {nombre: "lola", edad: 2, castrado: false},
+]
+
+// let nombreMascota = prompt("que mascota queres buscar");
+// const resultadoBusqueda = mascotas.find(mascota => mascota.nombre == nombreMascota) || "mascota no encontrada";
+// console.log(resultadoBusqueda)
+
+
+//operador logico AND andperson &&
+
+// mascotas.length > 80 && console.log(mascotas);
+
+// if (mascotas.length > 80) {
+//     console.log(mascotas)
+// }
+
+
+// NULLISH - ??
+// posibles valores:
+/*
+ valor real como texto o numero o array  - valor valido
+ true
+ ""
+ 0
+ false
+ NaN - not a number
+
+ valores FALSY
+ ==============
+ null
+ undefined
+
+*/
+
+// let carrito = document.querySelector("#texto")?.value || "no hay carrito";
+// console.log(carrito);
+
+// const usuario2 = {
+//     nombre: "vanesa",
+//     edad: 30,
+//     telefonos: {
+//         casa: 1111111,
+//         movil: 22222222,
+//     }
+// }
+// const usuario = null;
+
+// //acceso condicional al objeto
+// console.log(usuario2?.email?.personal || "no hay email")
+
+
+//desestructuracion
+const mascota = {
+    name_pet_blabla:"daisy",
+    edad: 3,
+    tipo: "perro",
+    genero: "femenino",
+    castrado: true,
+    duenio: {
+        nombreDuenio: "yael",
+        telefono: 11111
+    }
+}
+// let nombre = mascota.nombre;
+
+let {name_pet_blabla: nombre, edad, tipo, castrado, duenio: {nombreDuenio, telefono}, genero = "desconocido"} = mascota;
+console.log(nombre)
+
+//alias
+
+//spread - desparramar
