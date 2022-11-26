@@ -919,75 +919,75 @@
 
 // //alias
 
-// //spread - desparramar
+// // //spread - desparramar
 
 
-//DOM
-// 1 - por ID
-const titulo = document.getElementById("titulo");
-console.log(titulo)
+// //DOM
+// // 1 - por ID
+// const titulo = document.getElementById("titulo");
+// console.log(titulo)
 
-// 2 - por clase
-const parrafos = document.getElementsByClassName("parrafo");
-console.log(parrafos[0])
+// // 2 - por clase
+// const parrafos = document.getElementsByClassName("parrafo");
+// console.log(parrafos[0])
 
-// 3 - por etiqueta
-const subtitulo = document.getElementsByTagName("h2");
-console.log(subtitulo)
+// // 3 - por etiqueta
+// const subtitulo = document.getElementsByTagName("h2");
+// console.log(subtitulo)
 
-// 4 - por selector
-const texto1 = document.querySelector(".parrafo")
-const texto = document.querySelectorAll(".parrafo")
-console.log(texto1)
+// // 4 - por selector
+// const texto1 = document.querySelector(".parrafo")
+// const texto = document.querySelectorAll(".parrafo")
+// console.log(texto1)
 
-console.log(texto)
+// console.log(texto)
 // inner - dentro
 // for (const parrafo of parrafos) {
 //     console.log(parrafo.innerText)
 // }
 
-titulo.innerHTML = "este es un titulo de javascript con <a href='http://google.com'>link</a>"
-//getAttribute
-//setAttribute
+// titulo.innerHTML = "este es un titulo de javascript con <a href='http://google.com'>link</a>"
+// //getAttribute
+// //setAttribute
 
-// const imagen = document.querySelector("img")
-// const UrlImagen = imagen.getAttribute("src")
-// console.log(UrlImagen)
-// imagen.setAttribute("src", "https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800")
+// // const imagen = document.querySelector("img")
+// // const UrlImagen = imagen.getAttribute("src")
+// // console.log(UrlImagen)
+// // imagen.setAttribute("src", "https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800")
 
-titulo.style.color = "red"
-titulo.style.display = "none"
+// titulo.style.color = "red"
+// titulo.style.display = "none"
 
-titulo.className = "container"
+// titulo.className = "container"
 
-//crear elemento
-const heading3 = document.createElement("h3");
-heading3.setAttribute("id", "heading3")
-heading3.innerText = "este es un titulo nuevo"
-console.log(heading3)
-
-
-const contenedor = document.getElementById("nuevoContenedor")
- // agregar al DOM
-contenedor.append(heading3)
-//sacar del DOM
-contenedor.removeChild(heading3)
-
-const nombre = document.getElementById("nombre").value;
-console.log(nombre)
-
-const seleccionar = document.getElementById("select").value
+// //crear elemento
+// const heading3 = document.createElement("h3");
+// heading3.setAttribute("id", "heading3")
+// heading3.innerText = "este es un titulo nuevo"
+// console.log(heading3)
 
 
-const listaProductos = [
-    {id:1, nombre: "lapiz", precio: 100},
-    {id:2, nombre: "goma", precio: 50},
-    {id:3, nombre: "cuaderno", precio: 200},
-    {id:4, nombre: "marcadores", precio: 500},
-    {id:5, nombre: "abrochadora", precio: 450}
-]
+// const contenedor = document.getElementById("nuevoContenedor")
+//  // agregar al DOM
+// contenedor.append(heading3)
+// //sacar del DOM
+// contenedor.removeChild(heading3)
 
-const productos = document.getElementById("productos");
+// const nombre = document.getElementById("nombre").value;
+// console.log(nombre)
+
+// const seleccionar = document.getElementById("select").value
+
+
+// const listaProductos = [
+//     {id:1, nombre: "lapiz", precio: 100},
+//     {id:2, nombre: "goma", precio: 50},
+//     {id:3, nombre: "cuaderno", precio: 200},
+//     {id:4, nombre: "marcadores", precio: 500},
+//     {id:5, nombre: "abrochadora", precio: 450}
+// ]
+
+// const productos = document.getElementById("productos");
 
 // for (const producto of listaProductos) {
 //     console.log(producto)
@@ -1002,13 +1002,115 @@ const productos = document.getElementById("productos");
 
 
 //forEach - por cada elemento
-listaProductos.forEach(producto => {
-    const agregarHTML = document.createElement("div");
-    agregarHTML.setAttribute("id", producto.id);
-    agregarHTML.innerHTML = `
-        <h3>${producto.nombre}</h3>
-        <p>Precio: $${producto.precio}</p>
-    `;
-    productos.appendChild(agregarHTML)
+// listaProductos.forEach(producto => {
+//     const agregarHTML = document.createElement("div");
+//     agregarHTML.setAttribute("id", producto.id);
+//     agregarHTML.innerHTML = `
+//         <h3>${producto.nombre}</h3>
+//         <p>Precio: $${producto.precio}</p>
+//     `;
+//     productos.appendChild(agregarHTML)
 
+// })
+
+// EVENTOS
+let eventos = document.getElementById("eventos");
+let btn = document.getElementById("btn");
+
+// const escribir = () => {
+//     let texto = prompt("Que queres escribir?");
+//     eventos.innerHTML = texto;
+// }
+
+// 3 maneras de escuchar un evento
+//1 - metodo addEventListener (agregar escuchador de evento)
+//recibe dos parametros - el evento y la funcion
+// btn.addEventListener("click", ()=>{
+//     eventos.innerHTML = "hiciste click en el boton"
+// });
+
+//2 - forma reducida - el evento es el metodo
+// btn.onclick = () => {
+//     escribir()
+// };
+
+
+// tipos de eventos - mecanicos (mouse y los del teclado) y los de logica
+
+//mecanicos
+//1 mouse
+// mouseover
+// btn.addEventListener("mousemove", ()=> {
+//     console.log("hola");
+// })
+
+// 2 teclado
+let campoTexto = document.getElementById("texto");
+// campoTexto.onkeyup = ()=> {
+//     console.log(campoTexto.value)
+// }
+
+
+//logica
+// change, input
+// campoTexto.addEventListener("change", ()=>{
+//     console.log(`el nuevo valor es ${campoTexto.value}`)
+// })
+// // campoTexto.addEventListener("input", ()=>{
+// //     console.log(`el nuevo valor es ${campoTexto.value}`)
+// // }) 
+
+// let selector = document.getElementById("selector");
+// selector.onchange = () => {
+//     console.log(`el usuario eligio ${selector.value}`)
+// }
+
+//evento submit
+let formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", (e)=> {
+    e.preventDefault()
+    console.log(e)
 })
+let link = document.getElementById("link");
+link.onclick = (e)=> {
+    e.preventDefault();
+    console.log(e.target.innerText)
+}
+
+campoTexto.oninput = () => {
+    if(campoTexto.value == "") {
+        campoTexto.className = "error"
+    } else {
+        campoTexto.className = "valido"
+    }
+}
+
+// let nombre = prompt("cual es tu nombre?");
+// console.log(nombre)
+
+// //localStorage - setItem("nombre/clave", valor)
+// localStorage.setItem("nombreUsuario", nombre)
+
+// sessionStorage.setItem("edadTeporal", 58);
+let nombreGuardado = localStorage.getItem("nombreUsuario");
+localStorage.removeItem("nombreUsuario")
+
+// console.log(nombreGuardado)
+
+localStorage.setItem("edad", 30);
+let edadGuardada = localStorage.getItem("edad");
+
+console.log(edadGuardada + 1 )
+
+let producto = {
+    nombre: "auto",
+    precio: 1000
+}
+
+localStorage.setItem("producto", JSON.stringify(producto))
+
+//JSON.stringify - convierte texto complejo (arrays u objetos) a texto plano (json)
+
+//JSON.parse - convierte json (texto plano) a texto complejo (array u objeto)
+console.log(JSON.parse(localStorage.getItem("producto")))
